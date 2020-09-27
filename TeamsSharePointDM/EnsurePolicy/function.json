@@ -1,0 +1,15 @@
+{
+    "bindings": [
+      {
+        "type": "httpTrigger",
+        "methods": 
+        [
+            "post"
+        ]
+        ,
+        "authlevel": "function",
+        "name" : "req"
+      }
+    ],
+    "disabled": false
+  }
