@@ -1,0 +1,20 @@
+{
+    "bindings": [
+      {
+        "type": "httpTrigger",
+        "methods": 
+        [
+            "post"
+        ]
+        ,
+        "authlevel": "function",
+        "name" : "req"
+      },
+      {
+          "type": "http",
+          "name": "Response",
+          "direction": "out"
+      }
+    ],
+    "disabled": false
+  }
