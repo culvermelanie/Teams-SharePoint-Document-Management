@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.20.2004.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-B6FB0BD0C38F4EF48AC90D18C2D434A8">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-B6FB0BD0C38F4EF48AC90D18C2D434A8" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="Workspace request" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Workspace request" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Workspace request/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Workspace request/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Workspace request/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+            <pnp:ContentTypeBinding ContentTypeID="0x010052E99481655C464A9D88F2103006FF41" />
+            <pnp:ContentTypeBinding ContentTypeID="0x01000427601C400AD14785FC45E890DE7D5F" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{B06C9145-54B2-4596-AA6D-8F5A5D5B7B54}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Workspace request/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="demo_clientworkspace" />
+                <FieldRef Name="demo_sharepointurl" />
+                <FieldRef Name="demo_teamid" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="f816470e-b24b-4917-a508-82b16d13c46c" Name="demo_clientworkspace" DisplayName="Client Workspace" />
+            <pnp:FieldRef ID="663105a8-33f0-46fe-862c-ad70058ff9df" Name="demo_sharepointurl" DisplayName="SharePoint Workspace" />
+            <pnp:FieldRef ID="c67a7ee6-86a0-478a-8040-c77760e6b92b" Name="demo_teamid" DisplayName="Team ID" />
+            <pnp:FieldRef ID="86bb779f-9bf3-4b7e-91a9-eb99962abea5" Name="demo_owners" DisplayName="Owners" />
+            <pnp:FieldRef ID="f17caf02-4003-4991-b06d-fc3376c377ca" Name="demo_members" DisplayName="Members" />
+            <pnp:FieldRef ID="4074d27b-8950-441c-bb3b-d187bcea51ae" Name="demo_ou" DisplayName="Implementing Org" />
+          </pnp:FieldRefs>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://northeurope1.pushnp.svc.ms/notifications?token=96f2e953-6cbc-4d43-bfd4-9a3a257a5fa1" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
