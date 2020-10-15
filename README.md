@@ -22,6 +22,10 @@ Create an Azure Resource group to provision the artefacts listed in this [direct
 
 If you are real enthusiastic you can use the Azure ARM templates and provision the resources via Azure DevOps, otherwise just use the PowerShell cmdlts.
 
+## User
+
+Create a service account user with simple user permission in your tenant. That user should be able to create MS teams. 
+
 # After Azure Setup
 
 * fix the connection for the Logic App to point to the SharePoint list you provisioned in the previous step
@@ -39,3 +43,7 @@ If you are facing any issues or have questions, just drop me a line.
 
 # Disclaimer
 The code is provided as is and not ready to be used in an production environment.
+
+
+
+
