@@ -1,10 +1,41 @@
 <?xml version="1.0"?>
 <pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
   <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.20.2004.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
-  <pnp:Templates ID="CONTAINER-TEMPLATE-B6FB0BD0C38F4EF48AC90D18C2D434A8">
-    <pnp:ProvisioningTemplate ID="TEMPLATE-B6FB0BD0C38F4EF48AC90D18C2D434A8" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+  <pnp:Templates ID="CONTAINER-TEMPLATE-C8E63D26B02045858F65FD3CD02297A2">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-C8E63D26B02045858F65FD3CD02297A2" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:SiteFields>
+        <Field Type="UserMulti" DisplayName="Members" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleAndGroups" UserSelectionScope="0" Mult="TRUE" Sortable="FALSE" Group="Demo" ID="{f17caf02-4003-4991-b06d-fc3376c377ca}" SourceID="{{siteid}}" StaticName="demo_members" Name="demo_members" />
+        <Field Type="Lookup" DisplayName="Client Workspace" Required="FALSE" EnforceUniqueValues="FALSE" List="{{listid:Workspace request}}" WebId="{siteid}" ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" Group="Demo" ID="{f816470e-b24b-4917-a508-82b16d13c46c}" SourceID="{{siteid}}" StaticName="demo_clientworkspace" Name="demo_clientworkspace" />
+        <Field Type="Text" DisplayName="Implementing Org" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="Demo" ID="{4074d27b-8950-441c-bb3b-d187bcea51ae}" SourceID="{dfcf8fb9-a0fa-4ea6-ac81-a3b9860bba40}" StaticName="demo_ou" Name="demo_ou" CustomFormatter="">
+        </Field>
+        <Field Type="UserMulti" DisplayName="Owners" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleAndGroups" UserSelectionScope="0" Mult="TRUE" Sortable="FALSE" Group="Demo" ID="{86bb779f-9bf3-4b7e-91a9-eb99962abea5}" SourceID="{{siteid}}" StaticName="demo_owners" Name="demo_owners" />
+        <Field Type="URL" DisplayName="SharePoint Workspace" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Hyperlink" Group="Demo" ID="{663105a8-33f0-46fe-862c-ad70058ff9df}" SourceID="{dfcf8fb9-a0fa-4ea6-ac81-a3b9860bba40}" StaticName="demo_sharepointurl" Name="demo_sharepointurl" CustomFormatter="">
+        </Field>
+        <Field Type="Text" DisplayName="Team ID" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="Demo" ID="{c67a7ee6-86a0-478a-8040-c77760e6b92b}" SourceID="{dfcf8fb9-a0fa-4ea6-ac81-a3b9860bba40}" StaticName="demo_teamid" Name="demo_teamid" CustomFormatter="">
+        </Field>
+      </pnp:SiteFields>
+      <pnp:ContentTypes>
+        <pnp:ContentType ID="0x01000427601C400AD14785FC45E890DE7D5F" Name="Client Workspace" Description="" Group="Demo" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" UpdateChildren="true" />
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Required="true" UpdateChildren="true" />
+            <pnp:FieldRef ID="663105a8-33f0-46fe-862c-ad70058ff9df" Name="demo_sharepointurl" UpdateChildren="true" />
+            <pnp:FieldRef ID="c67a7ee6-86a0-478a-8040-c77760e6b92b" Name="demo_teamid" UpdateChildren="true" />
+            <pnp:FieldRef ID="86bb779f-9bf3-4b7e-91a9-eb99962abea5" Name="demo_owners" Required="true" UpdateChildren="true" />
+            <pnp:FieldRef ID="f17caf02-4003-4991-b06d-fc3376c377ca" Name="demo_members" UpdateChildren="true" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+        <pnp:ContentType ID="0x010052E99481655C464A9D88F2103006FF41" Name="Client Project" Description="" Group="Demo" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" UpdateChildren="true" />
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Required="true" UpdateChildren="true" />
+            <pnp:FieldRef ID="f816470e-b24b-4917-a508-82b16d13c46c" Name="demo_clientworkspace" Required="true" UpdateChildren="true" />
+            <pnp:FieldRef ID="4074d27b-8950-441c-bb3b-d187bcea51ae" Name="demo_ou" UpdateChildren="true" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+      </pnp:ContentTypes>
       <pnp:Lists>
-        <pnp:ListInstance Title="Workspace request" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Workspace request" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Workspace request/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Workspace request/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Workspace request/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+		<pnp:ListInstance Title="Workspace request" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Workspace request" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Workspace request/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Workspace request/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Workspace request/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
             <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
@@ -36,9 +67,6 @@
             <pnp:FieldRef ID="f17caf02-4003-4991-b06d-fc3376c377ca" Name="demo_members" DisplayName="Members" />
             <pnp:FieldRef ID="4074d27b-8950-441c-bb3b-d187bcea51ae" Name="demo_ou" DisplayName="Implementing Org" />
           </pnp:FieldRefs>
-          <pnp:Webhooks>
-            <pnp:Webhook ServerNotificationUrl="https://northeurope1.pushnp.svc.ms/notifications?token=96f2e953-6cbc-4d43-bfd4-9a3a257a5fa1" ExpiresInDays="1" />
-          </pnp:Webhooks>
         </pnp:ListInstance>
       </pnp:Lists>
     </pnp:ProvisioningTemplate>
